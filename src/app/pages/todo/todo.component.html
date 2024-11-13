@@ -1,0 +1,35 @@
+
+<app-input (dataUpdated)="dataUpdated($event)"></app-input>
+<!--  -->
+<div class="container">
+    <table class="table">
+        <thead>
+          <tr class="table-primary">
+            <th scope="col">id</th>
+            <th scope="col">Completed</th>
+            <th scope="col">title</th>
+            <th scope="col"></th>
+
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+            @for(x of user;track $index){
+                <tr class="table-danger">
+                    <td >{{x.id}}</td>
+                    @if(x.completed == changestatus){
+                      <td style="color:rgb(25, 0, 255);">{{x.completed}}</td>
+
+                    }@else{
+                      <td style="color:red;">{{x.completed}}</td>
+                    }
+                    <th scope="row">{{x.title}}</th>
+                    <th><button type="button" class="button btn btn-danger" (click)="Delete(index)">Delete</button></th>
+                    <th><button type="button" class="button btn btn-success" (click)="update(x)">update</button></th>
+                  </tr>               
+            }
+ 
+   
+        </tbody>
+      </table>
+</div>

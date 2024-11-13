@@ -1,0 +1,53 @@
+<div class="container mb-4">
+    <div class="w-75">
+        <form [formGroup]="myForm">
+            <label for="title">
+                title:
+            </label>
+            <input     formControlName="title"
+            class="form-control mb-2"
+            id="title"
+            type="text">
+            <label for="id">
+                Id
+            </label>
+            <input     formControlName="id"
+            class="form-control mb-2"
+            id="id"
+            type="text">
+            
+            <label for="userId"class="mx-2">
+                userID
+            </label>
+            <input     formControlName="userId"
+            class="form-control mb-2"
+            id="userId"
+            type="text">
+    <!--  -->
+          
+                 <div class="d-flex">
+                    <div class="mx-2">
+                        <label>
+                            true
+                           </label>
+                           <input type="radio" formControlName="completed" [value]="true"> 
+                     </div>
+                        <div class="mx-2">
+                          <label>
+                false
+              </label>
+              <input type="radio" formControlName="completed" [value]="false"> 
+         </div>
+                 </div>
+
+         
+      
+    <!--  -->   
+              <div class="mt-4">
+                <button (click)="reset()" type="button" class=" btn-danger btn mx-2 " style="color: white;">Reset</button>
+                <button (click)="update()" type="submit" class=" btn-warning btn " style="color: white;">Update</button>
+                <button (click)="post()" type="submit" class="btn btn-success mx-2" >Newuser</button>
+              </div>
+        </form>
+    </div>
+</div>
